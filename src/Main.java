@@ -4,13 +4,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        initialisation();
-        for (int i = 1; i > 0; i++) {
-            deplacement(creationFile());
+        Plateau.initialisation();
+        Plateau.affichage();
 
-            System.out.println("Le pion a pour direction: " + direction);
-            System.out.println("Le pion est a la position:\nLigne: " + position[0] + "\nColonne: " + position[1] + "\n\n");
-        }
+        Tortue test = new Tortue(0,0);
+        test.afficherTortue(test);
+
+        Plateau.update();
+
+        //initialisation();
+        //for (int i = 1; i > 0; i++) {
+         //   deplacement(creationFile());
+
+           // System.out.println("Le pion a pour direction: " + direction);
+            //System.out.println("Le pion est a la position:\nLigne: " + position[0] + "\nColonne: " + position[1] + "\n\n");
+        //}
 
     }
 
