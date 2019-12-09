@@ -7,6 +7,10 @@ public class Tortue {
 
     public Tortue(){
         position = new int[2];
-        position[0] = position[1] = 0;
+    }
+    public Tortue(int x, int y){
+        position = new int[2];
+        position[0] = x;
+        position[1] = y;
     }
 }
