@@ -10,33 +10,17 @@ public class Main {
         Tortue test = new Tortue(0,0);
         test.afficherTortue(test);
 
-        Plateau.update();
 
-        //initialisation();
-        //for (int i = 1; i > 0; i++) {
-         //   deplacement(creationFile());
+        for (int i = 1; i > 0; i++) {
+            deplacement(creationFile(),test);
 
-           // System.out.println("Le pion a pour direction: " + direction);
-            //System.out.println("Le pion est a la position:\nLigne: " + position[0] + "\nColonne: " + position[1] + "\n\n");
-        //}
-
-    }
-
-    public static char[][] plateau;
-    public static int[] position;
-    public static char direction = 'E';
-
-    public static void initialisation() {
-        plateau = new char[8][8];
-        position = new int[2];
-        for (int i = 0; i <= 7; i++) {
-            for (int j = 0; j <= 7; j++) {
-                plateau[i][j] = ' ';
-            }
+            Plateau.update();
+            System.out.println("Le pion a pour direction: " + test.orientation);
+            System.out.print(test.position[0]+" "+test.position[1]);
         }
-        position[0] = 7;
-        position[1] = 0;
+
     }
+
 
     public static ArrayDeque<String> creationFile() {
         ArrayDeque<String> instructions = new ArrayDeque<>();
@@ -52,52 +36,37 @@ public class Main {
         return instructions;
     }
 
-    public static void deplacement(ArrayDeque<String> instructions) {
+    public static void deplacement(ArrayDeque<String> instructions, Tortue tortue) {
         do {
             String next = instructions.poll();
-            if (direction == 'N') {
-                if (next.equals("A")) {
-                    if (position[0] == 0) {
-                    } else {
-                        position[0] -= 1;
-                    }
-                } else if (next.equals("G")) {
-                    direction = 'W';
-                } else if (next.equals("D")) {
-                    direction = 'E';
+            if(next.equals("A")){
+                if(tortue.orientation == 1){
+                    tortue.position[0] -= 1;
                 }
-            } else if (direction == 'E') {
-                if (next.equals("A")) {
-                    if (position[1] == 7) {
-                    } else {
-                        position[1] += 1;
-                    }
-                } else if (next.equals("G")) {
-                    direction = 'N';
-                } else if (next.equals("D")) {
-                    direction = 'S';
+                else if(tortue.orientation == 2){
+                    tortue.position[1] += 1;
                 }
-            } else if (direction == 'S') {
-                if (next.equals("A")) {
-                    if (position[0] == 7) {
-                    } else {
-                        position[0] += 1;
-                    }
-                } else if (next.equals("G")) {
-                    direction = 'E';
-                } else if (next.equals("D")) {
-                    direction = 'W';
+                else if(tortue.orientation == 3){
+                    tortue.position[0] += 1;
                 }
-            } else if (direction == 'W') {
-                if (next.equals("A")) {
-                    if (position[1] == 0) {
-                    } else {
-                        position[1] -= 1;
-                    }
-                } else if (next.equals("G")) {
-                    direction = 'S';
-                } else if (next.equals("D")) {
-                    direction = 'N';
+                else if(tortue.orientation == 4){
+                    tortue.position[1] -= 1;
+                }
+            }
+            else if(next.equals("D")){
+                if(tortue.orientation == 4){
+                    tortue.orientation = 1;
+                }
+                else {
+                    tortue.orientation += 1;
+                }
+            }
+            else if(next.equals("G")){
+                if(tortue.orientation == 1){
+                    tortue.orientation = 4;
+                }
+                else {
+                    tortue.orientation -= 1;
                 }
             }
         } while (instructions.size() != 0);
