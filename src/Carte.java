@@ -31,4 +31,31 @@ public class Carte {
             position[1] ++;
         }
     }
+
+    public void laser (int[] position,int orientation,int[] plateau){ /* identifer les tuiles */
+        if (orientation == 1) {
+
+            for (int i=position[0]; i>-1; i--){
+                if (plateau[i] contains("P"){ /* trouver comment identifier les tuiles sur le plateau */
+
+                }
+                else if (plateau[i]==)
+            }
+        }
+        else if (orientation == 3) {
+            for (int i=position[0]; i<9; i++){
+
+            }
+        }
+        else if (orientation == 2) {
+            for (int i=position[1]; i>-1; i--){
+
+            }
+        }
+        else {
+            for (int i=position[1]; i<9; i++){
+
+            }
+        }
+    }
 }
