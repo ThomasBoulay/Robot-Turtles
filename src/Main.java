@@ -25,7 +25,7 @@ public class Main {
         ArrayDeque<String> instructions = new ArrayDeque<>();
         String entree;
         do {
-            System.out.print("Saisissez \n“A” pour avancer \n“G” pour faire un quart de tour vers la gauche \n“D” pour faire un quart de tour vers la droite.");
+            System.out.print("\nSaisissez \n“A” pour avancer \n“G” pour faire un quart de tour vers la gauche \n“D” pour faire un quart de tour vers la droite.");
             Scanner scanner = new Scanner(System.in);
             entree = scanner.next();
             if (entree.equals("A") || entree.equals("G") || entree.equals("D")) {
