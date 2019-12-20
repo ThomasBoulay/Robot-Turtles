@@ -1,4 +1,3 @@
-package src;
 
 public class Carte {
     public void droite (int orientation) { /* fonction qui prend en argument l'orientation et qui tourne la tortue vers la droite */
@@ -32,11 +31,11 @@ public class Carte {
         }
     }
 
-    public void laser (int[] position,int orientation,int[] plateau){ /* identifer les tuiles */
+    /*public void laser (int[] position,int orientation,int[] plateau){ *//* identifer les tuiles *//*
         if (orientation == 1) {
 
             for (int i=position[0]; i>-1; i--){
-                if (plateau[i] contains("P"){ /* trouver comment identifier les tuiles sur le plateau */
+                if (plateau[i].contains("P"){ *//* trouver comment identifier les tuiles sur le plateau *//*
 
                 }
                 else if (plateau[i]==)
@@ -57,5 +56,5 @@ public class Carte {
 
             }
         }
-    }
+    }*/
 }
